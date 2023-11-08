@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns: th="http://www.thyseleaf.org">
+ <head>
+ <meta charset="UTF-8">
+ <title>Formulario</title>
+</head>
+<body>
+	<h1>CARGA DE ALUMNO</h1>
+	<div class="contairner">
+		<form th:object="${alumno}"th:action="@{cargarAlumno}"method="post">
+			<label form="dni"class="form-label">DNI:</label><br>
+			<input type="number"id="dni"th:field="*{dni}"class="form-control"requiered><br>
+			<label form="nombre"class="form-label">Nombre:</label><br>
+			<input type="text"id="nombre"th:field="*{name}"class="form-control"><br>
+			<label form="apellido"class="form-label">Apellido:</label><br>
+			<input type="text"id="apellido"th:field="*{lastname}"class="form-control"><br>
+			<label form="direccionCalle"class="form-label">Calle:</label><br>
+			<input type="text"id="direccionCalle"th:field="*{andressStreet}"class="form-control"><br>
+			<label form="direccionNumero"class="form-label">Numero:</label><br>
+			<input type="text"id="direccionNumero"th:field="*{andressNumber}"class="form-control"><br>
+			<label form="fechaNac"class="form-label">Fecha de Nacimiento:</label><br>
+			<input type="text"id="fechaNac"th:field="*{fechaNac}"class="form-control"requiered><br>
+			<label form="telefono"class="form-label">Telefono:</label><br>
+			<input type="number"id="telefono"th:field="*{telefono}"class="form-control"><br>
+			<label form="correoElect"class="form-label">Correo Electronico:</label><br>
+			<input type="text"id="correoElect"th:field="*{email}"class="form-control"><br>
+			<label form="estadoCivil"class="form-label">Estado Civil:</label><br>
+			<input type="text"id="estadoCivil"th:field="*{estadoCivil}"class="form-control"><br>
+			<label for="estado"class="form-label">ESTADO</label><br>
+			<input type="checkbox"id="estado"th:field="*{estado}"><br>
+			<input type="submit"value="Cargar Alumno"><br>		
+		</form>
+	</div>
+
+</body>
+</html>
