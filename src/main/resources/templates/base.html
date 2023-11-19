@@ -8,10 +8,10 @@
 
 </head>
 <body>
-	<h1>CARGA DE ALUMNO</h1>
+	<h1>CARGA DE DOCENTE</h1>
 	<img src="imagen/alumno.jpeg"width"=200"height="300"/>
 	<div class="container">
-		<form th:object="${alumno}"th:action="@{cargarAlumno}"method="post">
+		<form th:object="${docente}"th:action="@{cargarDocente}"method="post">
 			<label for="dni"class="form-label">DNI:</label><br>
 			<input type="number"id="dni"th:field="*{dni}"class="form-control"requiered><br>
 			<label for="nombre"class="form-label">Nombre:</label><br>
@@ -32,7 +32,7 @@
 			<input type="text"id="estadoCivil"th:field="*{estadoCivil}"class="form-control"><br>
 			<label for="estado"class="form-label">ESTADO</label><br>
 			<input type="checkbox"id="estado"th:field="*{estado}"><br>
-			<input type="submit"value="Cargar Alumno"><br>		
+			<input type="submit"value="Cargar Docente"><br>		
 		</form>
 	</div>
 

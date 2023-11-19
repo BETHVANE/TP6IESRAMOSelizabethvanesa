@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1>LISTADO DE ALUMNOS</h1>
+		<h1>LISTADO DE DOCENTE</h1>
 		<table class="table table-warning table-striped">
 <tr class="table-info">
 	 <th>Dni</th>
@@ -26,20 +26,20 @@
 	 <th></th>
 	 
  </tr>
-	<tr th:each="alu:${listado}">
-		<td th:text="${alu.dni}"></td>
-		<td th:text="${alu.name}"></td>
-		<td th:text="${alu.addressStreet}"></td>
-		<td th:text="${alu.andressNumber}"></td>
-		<td th:text="${alu.fechaNac}"></td>	
-		<td th:text="${alu.getEdad()}"></td>
-		<td th:text="${alu.telefono}"></td>
-		<td th:text="${alu.email}"></td>
-		<td th:text="${alu.estadoCivil}"></td>
-		<td><a type="button" class="btn btn-danger"href="#" th:href="@{'/eliminarAlumno/'+${alu.dni}}">ELIMINAR 
+	<tr th:each="doc:${listado}">
+		<td th:text="${doc.dni}"></td>
+		<td th:text="${doc.name}"></td>
+		<td th:text="${doc.addressStreet}"></td>
+		<td th:text="${doc.addressNumber}"></td>
+		<td th:text="${doc.fechaNac}"></td>	
+		<td th:text="${doc.getEdad()}"></td>
+		<td th:text="${doc.telefono}"></td>
+		<td th:text="${doc.email}"></td>
+		<td th:text="${doc.estadoCivil}"></td>
+		<td><a type="button" class="btn btn-danger"href="#" th:href="@{'/eliminarDocente/'+${doc.dni}}">ELIMINAR 
 			</a>
 		</td>
-		<td><a type="button" class="btn btn-warning"href="#" th:href="@{'/modificarAlumno/'+${alu.dni}}"/td>>MODIFICAR
+		<td><a type="button" class="btn btn-warning"href="#" th:href="@{'/modificardocente/'+${doc.dni}}"/td>>MODIFICAR
 		 </a>
 		</td>
 	</tr>

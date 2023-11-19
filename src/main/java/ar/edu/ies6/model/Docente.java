@@ -12,7 +12,7 @@ import jakarta.persistence.Id;
 
 @Entity
 @Component
-public class Alumnos {
+public class Docente {
 	@Column
 	private String name;
 	@Column
@@ -20,7 +20,7 @@ public class Alumnos {
 	@Column
 	private String addressStreet;
 	@Column
-	private Integer andressNumber;
+	private Integer addressNumber;
 	@Column
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private LocalDate fechaNac;
@@ -37,7 +37,7 @@ public class Alumnos {
 	public String getName() {
 		return name;
 	}
-	public Alumnos() {
+	public Docente() {
 		// TODO Auto-generated constructor stub
 	}
 	public void setName(String name) {
@@ -55,11 +55,11 @@ public class Alumnos {
 	public void setAddressStreet(String addressStreet) {
 		this.addressStreet = addressStreet;
 	}
-	public Integer getAndressNumber() {
-		return andressNumber;
+	public Integer getAddressNumber() {
+		return addressNumber;
 	}
-	public void setAndressNumber(Integer andressNumber) {
-		this.andressNumber = andressNumber;
+	public void setAddressNumber(Integer andressNumber) {
+		this.addressNumber = andressNumber;
 	}
 	public LocalDate getFechaNac() {
 		return fechaNac;
@@ -108,9 +108,3 @@ public class Alumnos {
 	}
 		
 	}
-	
-	
-	
-		
-		 
-	
