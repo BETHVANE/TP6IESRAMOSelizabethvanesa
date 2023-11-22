@@ -9,11 +9,11 @@
 </head>
 <body>
 	<div class="container">
-		<h1>CARGA DE ALUMNO</h1>
+		<h1 th:text="${editar ? 'Editar Alumno' : 'Carga de Alumno'}"></h1>
 		<img th:src="@{images/alumno.jpeg}" width="400" height="150" alt="alumno"/>
 	</div>
 	<div class="container">
-		<form th:object="${alumno}"th:action="@{cargarAlumno}"method="post">
+		<form th:object="${alumno}"  th:action="${editar ? '/modificarAlumno' : '/cargarAlumno'}" method="post">
 			<label for="dni"class="form-label">DNI:</label><br>
 			<input type="number"id="dni"th:field="*{dni}"class="form-control"requiered><br>
 			<label for="nombre"class="form-label">Nombre:</label><br>
@@ -34,7 +34,7 @@
 			<input type="text"id="estadoCivil"th:field="*{estadoCivil}"class="form-control"><br>
 			<label for="estado"class="form-label">ESTADO</label><br>
 			<input type="checkbox"id="estado"th:field="*{estado}"><br>
-			<input type="submit"value="Cargar Alumno"><br>		
+			<input type="submit" th:value="${editar ? 'Editar Alumno' : 'Cargar Alumno'}"><br>
 		</form>
 	</div>
 

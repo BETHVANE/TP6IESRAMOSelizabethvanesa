@@ -32,6 +32,7 @@ public class Alumnocontroller {
         System.out.println("Edad:"+alu.getEdad());
         
 		ModelAndView modelView= new ModelAndView("alumno");
+		modelView.addObject("editar", false);
 		modelView.addObject("alumno",alu);
 		return modelView;
 	}
@@ -74,7 +75,7 @@ public class Alumnocontroller {
   @GetMapping("/modificarAlumno/{dni}")
   public ModelAndView modificarAlumno(@PathVariable Integer dni) throws Exception{
 	  ModelAndView modifica=new ModelAndView("alumno");
-	  //modelView.addObject("listado", Listadodealumno.getListado());
+	  modifica.addObject("editar", true);
 	  modifica.addObject("alumno",alumnoService.encontrarUnAlumno(dni));
 	  return modifica;
 	  }
