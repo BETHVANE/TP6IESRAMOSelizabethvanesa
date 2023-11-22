@@ -8,12 +8,15 @@
 
 </head>
 <body>
-	<h1>CARGA DE DOCENTE</h1>
-	<img src="imagen/alumno.jpeg"width"=200"height="300"/>
+<body>
+	<div class="container">
+		<h1>CARGA DE DOCENTE</h1>
+		<img th:src="@{images/alumno.jpeg}" width="400" height="150" alt="alumno"/>
+	</div>
 	<div class="container">
 		<form th:object="${docente}"th:action="@{cargarDocente}"method="post">
 			<label for="dni"class="form-label">DNI:</label><br>
-			<input type="number"id="dni"th:field="*{dni}"class="form-control"requiered><br>
+			<input type="number"id="dni"th:field="*{dni}"class="form-control"required><br>
 			<label for="nombre"class="form-label">Nombre:</label><br>
 			<input type="text"id="nombre"th:field="*{name}"class="form-control"><br>
 			<label for="apellido"class="form-label">Apellido:</label><br>
@@ -23,7 +26,7 @@
 			<label for="direccionNumero"class="form-label">Numero:</label><br>
 			<input type="text"id="direccionNumero"th:field="*{addressNumber}"class="form-control"><br>
 			<label for="fechaNac"class="form-label">Fecha de Nacimiento:</label><br>
-			<input type="date"id="fechaNac"th:field="*{fechaNac}"class="form-control"requiered><br>
+			<input type="date"id="fechaNac"th:field="*{fechaNac}"class="form-control" required><br>
 			<label form="telefono"class="form-label">Telefono:</label><br>
 			<input type="number"id="telefono"th:field="*{telefono}"class="form-control"><br>
 			<label for="correoElect"class="form-label">Correo Electronico:</label><br>

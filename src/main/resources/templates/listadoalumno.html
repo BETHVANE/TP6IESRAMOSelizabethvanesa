@@ -13,8 +13,8 @@
 		<table class="table table-warning table-striped">
 <tr class="table-info">
 	 <th>Dni</th>
-	 <th>Nombre</th>
 	 <th>Apellido</th>
+	 <th>Nombre</th>
 	 <th>Calle</th>
 	 <th>Numero</th>
 	 <th>Fecha de Nacimiento</th>
@@ -29,6 +29,7 @@
 	<tr th:each="alu:${listado}">
 		<td th:text="${alu.dni}"></td>
 		<td th:text="${alu.name}"></td>
+		<td th:text="${alu.lastName}"></td>
 		<td th:text="${alu.addressStreet}"></td>
 		<td th:text="${alu.andressNumber}"></td>
 		<td th:text="${alu.fechaNac}"></td>	
@@ -36,10 +37,9 @@
 		<td th:text="${alu.telefono}"></td>
 		<td th:text="${alu.email}"></td>
 		<td th:text="${alu.estadoCivil}"></td>
-		<td><a type="button" class="btn btn-danger"href="#" th:href="@{'/eliminarAlumno/'+${alu.dni}}">ELIMINAR 
+		<td><a type="button" class="btn btn-danger" th:href="@{'/eliminarAlumno/'+${alu.dni}}">ELIMINAR
 			</a>
-		</td>
-		<td><a type="button" class="btn btn-warning"href="#" th:href="@{'/modificarAlumno/'+${alu.dni}}"/td>>MODIFICAR
+		<a type="button" class="btn btn-warning" th:href="@{'/modificarAlumno/'+${alu.dni}}">MODIFICAR
 		 </a>
 		</td>
 	</tr>
