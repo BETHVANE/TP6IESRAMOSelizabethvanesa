@@ -31,6 +31,7 @@ public class DocenteController{
         
 		ModelAndView modelView= new ModelAndView("docente");
 		modelView.addObject("docente",doc);
+		modelView.addObject("editar", false);
 		return modelView;
 	}
 		
@@ -69,6 +70,7 @@ public class DocenteController{
   public ModelAndView modificarAlumno(@PathVariable Integer dni) throws Exception{
 	  ModelAndView modifica=new ModelAndView("docente");
 	  //modelView.addObject("listado", ListadodeDocente.getListado());
+	  modifica.addObject("editar", true);
 	  modifica.addObject("docente",docenteService.encontrarUnDocente(dni));
 	  return modifica;
 	  }
