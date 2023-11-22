@@ -5,7 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import ar.edu.ies6.model.Docente;
 import ar.edu.ies6.repository.DocenteRepository;
+import org.springframework.stereotype.Service;
 
+
+@Service
 public class DocenteService {
 	@Autowired
 	DocenteRepository docenteRepository;
