@@ -25,13 +25,13 @@ public class Alumnocontroller {
 	@Autowired
 	AlumnoService alumnoService;
 	
-	@GetMapping ({"/index","/","/home"})
+	@GetMapping ("/alumnos")
 	public ModelAndView cargarAlumno () {
 		Alumnos alu= new Alumnos();
 		alu.setFechaNac(LocalDate.of(1988, 6,15));
         System.out.println("Edad:"+alu.getEdad());
         
-		ModelAndView modelView= new ModelAndView("index");
+		ModelAndView modelView= new ModelAndView("alumno");
 		modelView.addObject("alumno",alu);
 		return modelView;
 	}
@@ -62,9 +62,9 @@ public class Alumnocontroller {
 	 // if(Listadodealumno.getListado().get(i).getDni().equals(dni)) {
 	//Listadodealumno.getListado().remove(i);
 	  alumnoService.eliminarAlumno(dni);
-	  return"redirect:/mostrarlistado";
+	  return"redirect:/listarAlumnos";
 	  } 
-  @GetMapping("/mostrarlistado")
+  @GetMapping("/listarAlumnos")
   public ModelAndView mostrarAlumno() {
 	  ModelAndView listado=new ModelAndView("listadoalumno");
 	  //modelView.addObject("listado", Listadodealumno.getListado());
@@ -73,7 +73,7 @@ public class Alumnocontroller {
 	  }
   @GetMapping("/modificarAlumno/{dni}")
   public ModelAndView modificarAlumno(@PathVariable Integer dni) throws Exception{
-	  ModelAndView modifica=new ModelAndView("index");
+	  ModelAndView modifica=new ModelAndView("alumno");
 	  //modelView.addObject("listado", Listadodealumno.getListado());
 	  modifica.addObject("alumno",alumnoService.encontrarUnAlumno(dni));
 	  return modifica;

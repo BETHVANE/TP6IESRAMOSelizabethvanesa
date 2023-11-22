@@ -7,11 +7,8 @@ package ar.edu.ies6.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.ModelAndView;
+ import org.springframework.web.bind.annotation.*;
+ import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.ies6.model.Docente;
 import ar.edu.ies6.service.DocenteService;
@@ -26,13 +23,13 @@ public class DocenteController{
 	@Autowired
 	DocenteService docenteService;
 	
-	@GetMapping ({"/base","/","/home"})
-	public ModelAndView cargarAlumno () {
+	@GetMapping("/docente")
+	public ModelAndView cargarDocente () {
 		Docente doc= new Docente();
 		doc.setFechaNac(LocalDate.of(1988, 6,15));
         System.out.println("Edad:"+doc.getEdad());
         
-		ModelAndView modelView= new ModelAndView("base");
+		ModelAndView modelView= new ModelAndView("docente");
 		modelView.addObject("docente",doc);
 		return modelView;
 	}
@@ -59,9 +56,9 @@ public class DocenteController{
   @GetMapping("/eliminarDocente/{dni}")
   public String eliminarDocente(@PathVariable Integer dni)throws Exception {
 	  docenteService.eliminarDocente(dni);
-	return"redirect:/mostrarlistado";
+	return"redirect:/listarDocentes";
 	  } 
-  @GetMapping("/mostrarlistado")
+  @GetMapping("/listarDocentes")
   public ModelAndView mostrarDocente() {
 	  ModelAndView listado=new ModelAndView("listadoDocente");
 	  //modelView.addObject("listado", Listadodealumno.getListado());
@@ -70,7 +67,7 @@ public class DocenteController{
 	  }
   @GetMapping("/modificarDocente/{dni}")
   public ModelAndView modificarAlumno(@PathVariable Integer dni) throws Exception{
-	  ModelAndView modifica=new ModelAndView("base");
+	  ModelAndView modifica=new ModelAndView("docente");
 	  //modelView.addObject("listado", ListadodeDocente.getListado());
 	  modifica.addObject("docente",docenteService.encontrarUnDocente(dni));
 	  return modifica;
@@ -86,7 +83,7 @@ public class DocenteController{
 	  return modelView;
 	  }
   
-  @GetMapping("/listadoDocente/volver")
+  @GetMapping("/listarDocente/volver")
   public ModelAndView volver() {
 	  ModelAndView modelAndView=new ModelAndView("redirect:/base");
 	  
