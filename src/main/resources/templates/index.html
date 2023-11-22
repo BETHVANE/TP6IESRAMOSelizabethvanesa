@@ -13,19 +13,22 @@
 			 align-items: center;
 			 justify-content: center;
 			 margin: 0;
+			 background-color: #33f0ff;
 		 }
 	 </style>
 </head>
 <body>
 <div class="container">
+	<div class="row mb-sm-5" style="text-align: center">
+		<h1>Pagina Principal</h1>
+	</div>
 	<div class="row">
 		<div class="col-sm-3 mx-auto"></div>
 		<div class="col-sm-3 mx-auto">
 			<div class="card" style="width: 18rem;">
-				<img th:src="@{images/alumno.jpeg}" class="card-img-top" alt="alumno"/>
+				<img th:src="@{images/docentes.jpg}" class="card-img-top" alt="docentes"/>
 				<div class="card-body">
 					<h5 class="card-title">Docentes</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 				</div>
 				<div class="card-body">
 					<a th:href="@{'/docente'}" class="card-link">Cargar Docente</a>
@@ -35,10 +38,9 @@
 		</div>
 		<div class="col-sm-3 mx-auto">
 			<div class="card" style="width: 18rem;">
-				<img th:src="@{images/alumno.jpeg}" class="card-img-top"/>
+				<img th:src="@{images/alumnos.jpg}" class="card-img-top"/>
 				<div class="card-body">
 					<h5 class="card-title">Alumnos</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 				</div>
 				<div class="card-body">
 					<a th:href="@{'/alumnos'}" class="card-link">Cargar Alumno</a>
