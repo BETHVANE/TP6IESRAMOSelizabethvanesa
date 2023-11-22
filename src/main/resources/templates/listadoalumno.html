@@ -10,40 +10,43 @@
 <body>
 	<div class="container">
 		<h1>LISTADO DE ALUMNOS</h1>
+		<div class="row mb-3 mt-3">
+			<div class="col-sm-6">
+				<a type="button" class="btn btn-danger" th:href="@{'/home'}">Ir al incio</a>
+				<a type="button" class="btn btn-danger" th:href="@{'/alumnos'}">Cargar Alumno</a>
+			</div>
+		</div>
 		<table class="table table-warning table-striped">
-<tr class="table-info">
-	 <th>Dni</th>
-	 <th>Apellido</th>
-	 <th>Nombre</th>
-	 <th>Calle</th>
-	 <th>Numero</th>
-	 <th>Fecha de Nacimiento</th>
-	 <th>Edad</th>
-	 <th>Telefono</th>
-	 <th>Correo Electronico</th>
-	 <th>Estado Civil</th>
-	 <th>EDICION</th>
-	 <th></th>
-	 
- </tr>
-	<tr th:each="alu:${listado}">
-		<td th:text="${alu.dni}"></td>
-		<td th:text="${alu.name}"></td>
-		<td th:text="${alu.lastName}"></td>
-		<td th:text="${alu.addressStreet}"></td>
-		<td th:text="${alu.andressNumber}"></td>
-		<td th:text="${alu.fechaNac}"></td>	
-		<td th:text="${alu.getEdad()}"></td>
-		<td th:text="${alu.telefono}"></td>
-		<td th:text="${alu.email}"></td>
-		<td th:text="${alu.estadoCivil}"></td>
-		<td><a type="button" class="btn btn-danger" th:href="@{'/eliminarAlumno/'+${alu.dni}}">ELIMINAR
-			</a>
-		<a type="button" class="btn btn-warning" th:href="@{'/modificarAlumno/'+${alu.dni}}">MODIFICAR
-		 </a>
-		</td>
-	</tr>
-	</table>	 
+			<tr class="table-info">
+				 <th>Dni</th>
+				 <th>Apellido</th>
+				 <th>Nombre</th>
+				 <th>Calle</th>
+				 <th>Numero</th>
+				 <th>Fecha de Nacimiento</th>
+				 <th>Edad</th>
+				 <th>Telefono</th>
+				 <th>Correo Electronico</th>
+				 <th>Estado Civil</th>
+				 <th>EDICION</th>
+ 			</tr>
+			<tr th:each="alu:${listado}">
+				<td th:text="${alu.dni}"></td>
+				<td th:text="${alu.name}"></td>
+				<td th:text="${alu.lastName}"></td>
+				<td th:text="${alu.addressStreet}"></td>
+				<td th:text="${alu.andressNumber}"></td>
+				<td th:text="${alu.fechaNac}"></td>
+				<td th:text="${alu.getEdad()}"></td>
+				<td th:text="${alu.telefono}"></td>
+				<td th:text="${alu.email}"></td>
+				<td th:text="${alu.estadoCivil}"></td>
+				<td>
+					<a type="button" class="btn btn-danger" th:href="@{'/eliminarAlumno/'+${alu.dni}}">ELIMINAR</a>
+					<a type="button" class="btn btn-warning" th:href="@{'/modificarAlumno/'+${alu.dni}}">MODIFICAR</a>
+				</td>
+			</tr>
+		</table>
 	</div>
 </body>
 </html>

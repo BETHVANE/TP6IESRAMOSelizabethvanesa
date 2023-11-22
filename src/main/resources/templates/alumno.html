@@ -11,7 +11,14 @@
 	<div class="container">
 		<h1 th:text="${editar ? 'Editar Alumno' : 'Carga de Alumno'}"></h1>
 		<img th:src="@{images/alumno.jpeg}" width="400" height="150" alt="alumno"/>
+		<div class="row mb-3 mt-3">
+			<div class="col-sm-6">
+				<a type="button" class="btn btn-danger" th:href="@{'/home'}">Ir al incio</a>
+				<a type="button" class="btn btn-danger" th:href="@{'/listarAlumnos'}">Cargar Alumno</a>
+			</div>
+		</div>
 	</div>
+
 	<div class="container">
 		<form th:object="${alumno}"  th:action="${editar ? '/modificarAlumno' : '/cargarAlumno'}" method="post">
 			<label for="dni"class="form-label">DNI:</label><br>
